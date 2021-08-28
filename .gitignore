@@ -64,3 +64,8 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 #amplify-do-not-edit-end
+/amplify/backend/backend-config.json
+/amplify/cli.json
+/amplify/.config/project-config.json
+/amplify/backend/tags.json
+/amplify/team-provider-info.json
