@@ -15,7 +15,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
         {
-          label: "About Me"
+          label: "About Me",
+          routerLink: "/about-me"
         },
         {
           label: "Other"

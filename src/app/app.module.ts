@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import {MenuModule} from "primeng/menu";
 import {MenubarModule} from "primeng/menubar";
+import { AppRoutingModule } from './app-routing.module';
+import { AboutMeComponent } from './aboutme/about-me/about-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
     MenuModule,
-    MenubarModule
+    MenubarModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
