@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar/navbar.component';
-import {MenuModule} from "primeng/menu";
-import {MenubarModule} from "primeng/menubar";
+import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AboutMeComponent } from './aboutme/about-me/about-me.component';
-import { MyProjectsComponent } from './projects/my-projects/my-projects.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { ResumeComponent } from './resume/resume.component';
+import { FooterComponent } from './footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,13 +16,13 @@ import { ResumeComponent } from './resume/resume.component';
     NavbarComponent,
     AboutMeComponent,
     MyProjectsComponent,
-    ResumeComponent
+    ResumeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    MenuModule,
-    MenubarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from "primeng/api";
+import { CommonModule } from '@angular/common';
+import {MenuItem, SelectItem} from "primeng/api";
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import {MenuItem} from "primeng/api";
 })
 export class NavbarComponent implements OnInit {
 
-  items = [] as MenuItem[];
+  items = [] as SelectItem[];
 
   constructor() { }
 
@@ -16,15 +17,15 @@ export class NavbarComponent implements OnInit {
     this.items = [
         {
           label: "About Me",
-          routerLink: "/me"
+          value: "/me"
         },
         {
           label: "My Projects",
-          routerLink: "/projects"
+          value: "/projects"
         },
         {
           label: "Resume",
-          routerLink: "/resume"
+          value: "/resume"
         }
       ]
   }
