@@ -16,10 +16,15 @@ export class NavbarComponent implements OnInit {
     this.items = [
         {
           label: "About Me",
-          routerLink: "/about-me"
+          routerLink: "/me"
         },
         {
-          label: "Other"
+          label: "My Projects",
+          routerLink: "/projects"
+        },
+        {
+          label: "Resume",
+          routerLink: "/resume"
         }
       ]
   }
