@@ -12,4 +12,12 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToLinkedIn(): void {
+    window.location.href = "https://www.linkedin.com/in/alex-dana-907a74193/";
+  }
+
+  goToGithub(): void {
+    window.location.href = "https://github.com/cadsdanaa";
+  }
+
 }
