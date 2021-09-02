@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
     this.items = [
         {
           label: "About Me",
-          value: "/me"
+          value: "/"
         },
         {
           label: "My Projects",

@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li *ngFor="let item of items">
-        <a class="nav-link" [routerLink]="[item.value]">{{item.label}}</a>
+        <button class="btn btn-outline-secondary" [routerLink]="[item.value]">{{item.label}}</button>
       </li>
     </ul>
   </div>
