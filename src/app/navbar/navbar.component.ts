@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {MenuItem, SelectItem} from "primeng/api";
+import { SelectItem } from "primeng/api";
 
 @Component({
   selector: 'app-navbar',
@@ -29,5 +28,6 @@ export class NavbarComponent implements OnInit {
         }
       ]
   }
+
 
 }
