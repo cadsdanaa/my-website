@@ -9,6 +9,7 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { ResumeComponent } from './resume/resume.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

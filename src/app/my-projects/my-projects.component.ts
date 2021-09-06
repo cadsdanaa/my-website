@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-my-projects',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProjectsComponent implements OnInit {
 
-  constructor() { }
+  universe = [] as string[];
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
   }
 
+  conwayHttp() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+      })
+    };
+    this.http.get("http://conwaygohttp-env.eba-mgfrwrzx.us-east-2.elasticbeanstalk.com/conway", httpOptions).subscribe(res => {
+      let resObject = res as any;
+      this.universe = resObject['Universe'].split("\n");
+    })
+  }
 }
