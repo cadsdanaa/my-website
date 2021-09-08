@@ -22,7 +22,7 @@ export class MyProjectsComponent implements OnInit {
         'Access-Control-Allow-Origin':'*'
       })
     };
-    this.http.get("http://conwaygohttp-env.eba-mgfrwrzx.us-east-2.elasticbeanstalk.com/conway", httpOptions).subscribe(res => {
+    this.http.get("http://conway.us-east-2.elasticbeanstalk.com/conway", httpOptions).subscribe(res => {
       let resObject = res as any;
       this.universe = resObject['Universe'].split("\n");
     })
