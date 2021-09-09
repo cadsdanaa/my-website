@@ -22,7 +22,7 @@ export class MyProjectsComponent implements OnInit {
         'Access-Control-Allow-Origin':'*'
       })
     };
-    this.http.get("http://raspberrypi-secure-web-protocol.at.remote.it:30000/conway", httpOptions).subscribe(res => {
+    this.http.get("https://raspberrypi-secure-web-protocol.at.remote.it:30001/conway", httpOptions).subscribe(res => {
       let resObject = res as any;
       this.universe = resObject['Universe'].split("\n");
     })
