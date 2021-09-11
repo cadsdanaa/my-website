@@ -1,0 +1,15 @@
+<div class="input group mb-3">
+  <h2>Conway In Go Via AWS Lambda - <a href="https://github.com/cadsdanaa/conwayHttp" target="_blank">Source Code</a> -
+    <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">About</a></h2>
+  <label for="randomSeed">Seed</label>
+  <input type="number" [disabled]="universe.length != 0" [(ngModel)]="randomSeed" placeholder="Randomization Seed" id="randomSeed" class="form-group">
+  <br>
+  <button (click)="conwayHttp()" class="btn btn-info">
+    {{universe.length == 0 ? 'Start Game' : 'Progress'}}
+  </button>
+  <div>
+    <div style="font-family:monospace;" *ngFor="let row of universe">
+      {{row}}
+    </div>
+  </div>
+</div>
