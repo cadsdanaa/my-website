@@ -23,41 +23,28 @@ export class ConwayComponent implements OnInit {
 
     if(this.universe.length == 0) {
       this.generateInitialUniverse();
-      universeToSend = this.initialUniverse;
     } else {
       let temp = this.universe.join("\n");
       temp = temp.substr(0, temp.length-1);
       universeToSend = {"Universe": temp};
+      this.http.post("https://si4cjeooo3.execute-api.us-east-2.amazonaws.com/default/conway", universeToSend, {headers: ourHeaders})
+        .subscribe(res => {
+          let resObject = res as any;
+          this.universe = resObject['Universe'].split("\n");
+        });
     }
-    this.http.post("https://si4cjeooo3.execute-api.us-east-2.amazonaws.com/default/conway", universeToSend, {headers: ourHeaders})
-      .subscribe(res => {
-        let resObject = res as any;
-        this.universe = resObject['Universe'].split("\n");
-      });
   }
 
   private generateInitialUniverse() {
-    let initialUniverseString = "";
-    const rand = this.mulberry32(this.randomSeed);
-    for (let i = 0; i < 10; i++) {
-      for(let j = 0; j < 10; j++) {
-        const val = rand();
-        initialUniverseString += (val%3==0 ? "X" : "-");
-        if(i != 9 && j == 9) {
-          initialUniverseString += "\n";
-        }
-      }
-    }
-    this.initialUniverse = {"Universe": initialUniverseString};
+    this.universe = [""];
+    let ourHeaders = new HttpHeaders()
+      .set('x-api-key', 'l5hvJ8BS937twqRflPlex7Jo4UaViNKB2UEb8dts')
+    this.http.get("https://si4cjeooo3.execute-api.us-east-2.amazonaws.com/default/conway?seed=" + this.randomSeed, {headers: ourHeaders, observe: 'response'})
+      .subscribe(res => {
+        let resObject = res as any;
+        this.universe = resObject.body['Universe'].split("\n");
+      });
   }
 
-  private mulberry32(seed: number) {
-    return function() {
-      let t = seed += 0x6D2B79F5;
-      t = Math.imul(t ^ t >>> 15, t | 1);
-      t ^= t + Math.imul(t ^ t >>> 7, t | 61);
-      return Math.trunc((((t ^ t >>> 14) >>> 0) / 4294967296)*100000000);
-    }
-  }
 
 }
