@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ConwayComponent } from './my-projects/conway/conway.component';
 import { FormsModule } from '@angular/forms';
-import { PdfViewerModule } from "ng2-pdf-viewer";
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { PdfViewerModule } from "ng2-pdf-viewer";
     CommonModule,
     HttpClientModule,
     FormsModule,
-    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
