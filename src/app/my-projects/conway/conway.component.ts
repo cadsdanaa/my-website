@@ -10,7 +10,6 @@ export class ConwayComponent implements OnInit {
 
   randomSeed = 123;
   universe = [] as string[];
-  initialUniverse = {"Universe": ""};
 
   constructor(private http: HttpClient) { }
 

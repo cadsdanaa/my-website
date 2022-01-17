@@ -1,0 +1,5 @@
+#backgroundDiv {
+  background-image: url("src/assets/KyotoForest1.jpg");
+  min-height: 100vh;
+  background-size: cover;
+}

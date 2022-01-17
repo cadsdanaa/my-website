@@ -7,7 +7,7 @@
   <button (click)="conwayHttp()" class="btn btn-info">
     {{universe.length == 0 ? 'Start Game' : 'Progress'}}
   </button>
-  <div>
+  <div id="conwayBoard">
     <div style="font-family:monospace;" *ngFor="let row of universe">
       {{row}}
     </div>
